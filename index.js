@@ -18,7 +18,7 @@ const questions = [
 ]
 
 function createPDF(uDataUser) {
-  const html = fs.readFileSync('./prof.html', 'utf8');
+  const html = fs.readFileSync('./index.html', 'utf8');
   const options = { format: 'Letter' };
   pdf.create(html, options).toFile(`./${uDataUser}.pdf`, function(err, res) {
     if (err) return console.log(err);
@@ -71,7 +71,7 @@ function buildProf(answers, github, uDataStar) {
     </html>
     `
   // console.log(answers, uDataImg)
-  fs.writeFile("prof.html", HTML, function(err) {
+  fs.writeFile("index.html", HTML, function(err) {
     if (err) {
       return console.log(err);
     }
